@@ -1,0 +1,9 @@
+#continentsWrapper{
+    display: block;
+}
+
+#continentsWrapper img {
+    position: absolute;
+    
+}
+
