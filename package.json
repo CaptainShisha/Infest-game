@@ -1,0 +1,23 @@
+{
+  "name": "infest",
+  "version": "1.0.0",
+  "description": "Being a virus in 2018 is a very hard job. Very much people to kill, and no time to do it!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/aaster23/infest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/aaster23/infest/issues"
+  },
+  "homepage": "https://gitlab.com/aaster23/infest#readme",
+  "dependencies": {
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.4"
+  }
+}

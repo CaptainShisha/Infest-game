@@ -5,13 +5,15 @@ export class Upgrade implements IUpgrade{
     private _upgradeName: string;
     private _upgradeDescription: string;
     private _upgradePrice: number;
-    private _upgradeEffect: string[];
+    private _upgradeEffect: string;
+    private _propertyToUpgrade: string;
 
-    constructor(name: string, description: string, price: number, effect: string[]){
+    constructor(name: string, description: string, price: number, effect: string, propertyToUpgrade: string){
         this._upgradeName = name;
         this._upgradeDescription = description;
         this._upgradePrice = price;
         this._upgradeEffect = effect;
+        this._propertyToUpgrade = propertyToUpgrade;
     }
 
     public get upgradeName(): string{
@@ -22,12 +24,16 @@ export class Upgrade implements IUpgrade{
         return this._upgradePrice;
     }
 
-    public get upgradeEffect(): string[]{
+    public get upgradeEffect(): string{
         return this._upgradeEffect;
     }
 
     public get description(): string{
         return this._upgradeDescription;
+    }
+
+    public get propertyToUpgrade(): string{
+        return this._propertyToUpgrade;
     }
 
     public createUpgradeTabInBrowser(): void{

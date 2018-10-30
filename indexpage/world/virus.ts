@@ -1,3 +1,4 @@
+import { IUpgrade } from './../upgradesmenu/scripts/IUpgrade';
 import { Planet } from './World';
 export class Virus{
     private readonly _virus_name: string;
@@ -29,7 +30,11 @@ export class Virus{
     }
     
     public kill(): number{
+        Planet.infectedPeople
+    }
 
+    public upgradeVirus(upgrade:IUpgrade):void {
+        this[upgrade.propertyToUpgrade] += upgrade.upgradeEffect;
     }
     
 }
