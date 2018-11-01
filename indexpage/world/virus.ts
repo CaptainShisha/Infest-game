@@ -15,10 +15,13 @@ export class Virus{
         this._chance_of_mutation = 0;
     }
 
-    public infect(): number{
-        return this._spread * Math.random() * 10;
+    public get spread():number {
+        return this._spread;
     }
-    
+
+    public get deadliness():number {
+        return this._deadliness;
+    }
     public detected():  boolean{
         let randomNumberRange: number = Math.random();
         let chanceNumber: number = Math.random();
@@ -28,13 +31,10 @@ export class Virus{
         }
         return false;
     }
-    
-    public kill(): number{
-        Planet.infectedPeople
-    }
 
     public upgradeVirus(upgrade:IUpgrade):void {
         this[upgrade.propertyToUpgrade] += upgrade.upgradeEffect;
     }
+
     
 }

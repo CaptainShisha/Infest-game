@@ -1,14 +1,26 @@
+import { Virus } from './virus';
+import { Continent } from './Continent';
 export class Planet {
-    private population: number = 7530154555;
+    private population: number;
     private dead: number = 0;
-    private growth_rate: number = 1.3;
-    private infectedPeople: 0;
+    private growth_rate: number;
+    private infectedPeople: number;
+    private continents: Continent[];
 
-    constructor(){}
-
-    public calculateGrowth(): void{
-        this.population += this.population * this.growth_rate;
+    constructor(){
+        this.continents = [];
     }
 
-    
+    public turn(virus: Virus): void{
+        let changes: number[] = [];
+
+        this.continents.forEach((continent) => {
+            changes[0] += continent.infest(virus.spread);
+            changes[1] += continent.deaths(virus.deadliness);
+        });
+
+        this.infectedPeople += changes[0];
+        this.dead += changes[1];
+    }
+
 }

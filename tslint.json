@@ -13,7 +13,7 @@
         "no-submodule-imports": false,
         "missing-jsdoc": false,
         "no-any": true,
-        "export-name": [true, {
+        "export-name": [false, {
             "ignore-case": true
         }],
         "no-console": false,
@@ -27,7 +27,7 @@
         "no-consecutive-blank-lines": true,
         "no-parameter-reassignment": false,
         "align": false,
-        "no-parameter-properties": false,
+        "no-parameter-properties": false
     },
     "rulesDirectory": []
 }
