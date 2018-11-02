@@ -26,5 +26,4 @@ export class Continent {
         this._population -= deadliness;
         return deadliness; 
     }
-
 }

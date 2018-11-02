@@ -6,6 +6,7 @@ export class Virus{
     private _deadliness: number;
     private _chance_of_discovery: number;
     private _chance_of_mutation: number;
+    private _points: number;
 
     constructor(name: string){
         this._virus_name = name;
@@ -22,6 +23,7 @@ export class Virus{
     public get deadliness():number {
         return this._deadliness;
     }
+    
     public detected():  boolean{
         let randomNumberRange: number = Math.random();
         let chanceNumber: number = Math.random();
@@ -32,7 +34,12 @@ export class Virus{
         return false;
     }
 
-    public upgradeVirus(upgrade:IUpgrade):void {
+    public points(): number{
+        return this._points;
+    }
+    
+    public upgradeVirus(upgrade:IUpgrade, cost: number):void {
+        this._points -= cost;
         this[upgrade.propertyToUpgrade] += upgrade.upgradeEffect;
     }
 

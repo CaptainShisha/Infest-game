@@ -1,7 +1,7 @@
 export interface IUpgrade{
     upgradeName: string;
     upgradePrice: number;
-    upgradeEffect: string;
+    upgradeEffect: number;
     description: string;
     propertyToUpgrade: string;
     createUpgradeTabInBrowser(): void;

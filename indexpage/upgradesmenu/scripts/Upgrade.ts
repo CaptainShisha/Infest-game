@@ -1,14 +1,14 @@
 import { IUpgrade } from './IUpgrade';
 import * as $ from 'jquery';
 
-export class Upgrade implements IUpgrade{
+export class Upgrade implements IUpgrade {
     private _upgradeName: string;
     private _upgradeDescription: string;
     private _upgradePrice: number;
-    private _upgradeEffect: string;
+    private _upgradeEffect: number;
     private _propertyToUpgrade: string;
 
-    constructor(name: string, description: string, price: number, effect: string, propertyToUpgrade: string){
+    constructor(name: string, description: string, price: number, effect: number, propertyToUpgrade: string){
         this._upgradeName = name;
         this._upgradeDescription = description;
         this._upgradePrice = price;
@@ -24,7 +24,7 @@ export class Upgrade implements IUpgrade{
         return this._upgradePrice;
     }
 
-    public get upgradeEffect(): string{
+    public get upgradeEffect(): number{
         return this._upgradeEffect;
     }
 
