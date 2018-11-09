@@ -2,6 +2,7 @@ import { IUpgrade } from './IUpgrade';
 
 export class Upgrades {
     private _Upgrades: IUpgrade[];
+    private _UsedUpgrades: IUpgrade[];
 
     constructor(){
         this._Upgrades = [];
@@ -12,7 +13,11 @@ export class Upgrades {
     }
 
     public AddUpgrade(upgrade: IUpgrade): void {
-        this._Upgrades.push(upgrade);
+        if(!this._UsedUpgrades.includes(upgrade)){
+             this._Upgrades.push(upgrade);
+        } else {
+            throw new Error("There is such an upgrade!")
+        }
     }
 
     public get Upgrades(): IUpgrade[] {
@@ -21,5 +26,9 @@ export class Upgrades {
     
     public DisplayAllUpgrades(): void {
         this._Upgrades.forEach((upgrade) => upgrade.createUpgradeTabInBrowser());
+    }
+
+    public DisplayAllRemovedUpgrades(): void {
+        this._UsedUpgrades.forEach((upgrade) => upgrade.createUpgradeTabInBrowser());
     }
 }

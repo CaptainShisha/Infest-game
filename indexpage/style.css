@@ -1,22 +1,23 @@
-#continentsWrapper{
+#gameContainer{
     display: grid;
-    grid-template-columns: 1fr 3fr;
-    width: 60vw;
-    height: 80vh;
+    grid-template-columns: 1fr 2fr;
     margin: 0 auto;
+    padding: 0;
+    text-align: center;
 }
 
-#america{
-    display: block;
+#worldAndContinentsHolder{
+    display: grid;
+    grid-template-rows: 1fr 6fr;
 }
 
-#northAmerica{
-    position: absolute;
-    left: 0;
+#upgradesAndLogHolder{
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr;
 }
 
-#southAmerica{
-    position: absolute;
-    left: 30.5%;
-    margin-top: -2%;
+#upgradesContainer, #logContainer{
+    height: 20vh;
+    overflow-y: scroll;
+    width: 100%;
 }
