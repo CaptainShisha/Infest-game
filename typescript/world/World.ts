@@ -1,5 +1,6 @@
 import { Virus } from './virus';
 import { Continent } from './Continent';
+
 export class Planet {
     private population: number;
     private dead: number = 0;

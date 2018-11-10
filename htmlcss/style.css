@@ -4,11 +4,15 @@
     margin: 0 auto;
     padding: 0;
     text-align: center;
+    background-color: rgb(148, 228, 241);
+    font-size: 2.2vh;
 }
 
 #worldAndContinentsHolder{
     display: grid;
     grid-template-rows: 1fr 6fr;
+    border: solid black 1.3px;
+    border-right: 0;
 }
 
 #upgradesAndLogHolder{
@@ -19,5 +23,19 @@
 #upgradesContainer, #logContainer{
     height: 20vh;
     overflow-y: scroll;
-    width: 100%;
+    width: 99.8%;
+    border: solid black 1px;
+}
+
+#upgradesContainer{
+    height: 41vh;
+}
+
+#globalStatsContainer{
+    border: solid black 1px;
+    border-bottom: 0;
+}
+
+#continentsContainer{
+    border-top: solid black 1px;
 }

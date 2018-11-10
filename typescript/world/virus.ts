@@ -1,4 +1,5 @@
-import { IUpgrade } from './../upgradesmenu/scripts/IUpgrade';
+import { IUpgrade } from './../upgrades/IUpgrade';
+
 export class Virus{
     private readonly _virus_name: string;
     private _spread: number;
