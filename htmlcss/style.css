@@ -9,6 +9,7 @@ body {
     text-align: center;
     background-color: rgb(148, 228, 241);
     font-size: 2.2vh;
+    display: none;
 }
 
 #worldAndContinentsHolder{
@@ -70,4 +71,43 @@ path:hover {
     stroke: white;
     stroke-opacity: 1;
     stroke-width: 0.1;
+}
+
+#inputFrame {
+    border: solid 2px black
+}
+
+div .smallContinents {
+    display: inline-block;
+    /* border : solid 2px black; */
+    margin: 2%;
+    padding: 2px;
+    width: 11%;
+    height: 70px;
+}
+
+div .smallContinents img {
+    
+        max-width: 100%;
+        max-height: 100%;
+    
+}
+
+div .smallContinents p {
+    text-align: center;
+}
+
+#inputFrame {
+    width: 80%;
+    margin: auto;
+    background: gray;
+}
+
+#inputFrame input {
+    
+}
+
+#selectContinent {
+    width: 80%;
+    margin: auto;
 }
