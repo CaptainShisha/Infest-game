@@ -32,4 +32,9 @@ export class Planet {
         this.population += changes[2];
     }
 
+    public calculatePopulationOnStart(): void{
+        this.population = this.continents.reduce((accumulator: number, continent: Continent) => {
+            return accumulator += continent.population;
+        }, 0)
+    }
 }
