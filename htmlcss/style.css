@@ -1,3 +1,6 @@
+body {
+    margin: 0px;
+}
 #gameContainer{
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -38,6 +41,10 @@
 
 #continentsContainer{
     border-top: solid black 1px;
+    background-image: url("./assets/grid.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
@@ -45,6 +52,7 @@ svg {
     overflow: auto;
     padding-top: 3vh;
     width: 50vw;
+    
 }
 
 path {
