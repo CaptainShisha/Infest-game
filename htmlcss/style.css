@@ -48,13 +48,15 @@ svg {
 }
 
 path {
-    fill: rgb(113, 228, 189);
+    fill: white;
     user-select: none;
 	cursor: pointer;
 }
+
 path:hover {
     fill: rgb(28, 168, 121);
 }
+
 .land {
     fill-opacity: 1;
     stroke: white;
