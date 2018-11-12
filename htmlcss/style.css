@@ -16,19 +16,19 @@
 }
 
 #upgradesAndLogHolder{
-    display: grid;
-    grid-template-rows: 1fr 2fr 1fr;
+    display: flex;
+    flex-direction: column;
 }
 
 #upgradesContainer, #logContainer{
-    height: 20vh;
+    height: 41vh;
     overflow-y: scroll;
     width: 99.8%;
     border: solid black 1px;
 }
 
 #upgradesContainer{
-    height: 41vh;
+    height: 44.5vh;
 }
 
 #globalStatsContainer{
@@ -38,4 +38,26 @@
 
 #continentsContainer{
     border-top: solid black 1px;
+}
+
+
+svg {
+    overflow: auto;
+    padding-top: 3vh;
+    width: 50vw;
+}
+
+path {
+    fill: rgb(113, 228, 189);
+    user-select: none;
+	cursor: pointer;
+}
+path:hover {
+    fill: rgb(28, 168, 121);
+}
+.land {
+    fill-opacity: 1;
+    stroke: white;
+    stroke-opacity: 1;
+    stroke-width: 0.1;
 }
