@@ -10,4 +10,5 @@ export abstract class manipulateDOM {
                 $('#itemsContainer').append(`<div id="closeButton"><strong>Back</strong></div>`);
         }
     }
+    
 }
