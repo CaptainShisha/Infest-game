@@ -1,4 +1,6 @@
-export class Player {
+import { IPlayer } from './contracts/IPlayer';
+
+export class Player implements IPlayer {
     private _points: number = 0;
     private _rounds: number = 0;
 

@@ -1,4 +1,4 @@
-import { IUpgrade } from './IUpgrade';
+import { IUpgrade } from './contracts/IUpgrade';
 
 export class Upgrades {
     private _Upgrades: IUpgrade[];

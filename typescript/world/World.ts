@@ -1,7 +1,8 @@
 import { Continent } from './Continent';
+import { IPlanet } from './contracts/IPlanet';
 import { Virus } from './virus';
 
-export class Planet {
+export class Planet implements IPlanet {
     private _population: number;
     private _dead: number = 0;
     private readonly _growthRate: number;

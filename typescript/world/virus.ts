@@ -1,4 +1,6 @@
-export class Virus {
+import { IVirus } from './contracts/IVirus';
+
+export class Virus implements IVirus {
     private readonly _virusName: string;
     private _spread: number;
     private _deadliness: number;
@@ -40,11 +42,11 @@ export class Virus {
         this._chanceOfDiscovery = changeSetter;
     }
 
-    public get chanceOfMutation(): number{
+    public get chanceOfMutation(): number {
         return this._chanceOfMutation;
     }
 
-    public set chanceOfMutation(chanceChange: number){
+    public set chanceOfMutation(chanceChange: number) {
         this._chanceOfMutation += chanceChange;
     }
 }

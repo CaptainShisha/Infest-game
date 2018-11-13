@@ -1,4 +1,6 @@
-export class Continent {
+import { IContinent } from './contracts/IContinent';
+
+export class Continent implements IContinent {
 
     public readonly _continentName: string;
     private _population: number;
