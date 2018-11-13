@@ -2,38 +2,48 @@ import { Continent } from './Continent';
 import { Virus } from './virus';
 
 export class Planet {
-    private population: number;
-    private dead: number = 0;
-    private growthRate: number;
-    private infectedPeople: number;
-    private continents: Continent[];
+    private _population: number;
+    private _dead: number = 0;
+    private readonly _growthRate: number;
+    private _infectedPeople: number;
+    private _continents: Continent[];
 
     constructor() {
-        this.continents = [];
+        this._continents = [];
     }
 
-    public turn(virus: Virus): void {
-        const changes: number[] = [];
-
-        this.continents.forEach((continent: Continent) => {
-            if (continent.isInfected) {
-                const chance: number = Math.random();
-                if (chance > Math.random() && chance < Math.random()) {
-                    this.continents[Math.random() * 10 % 7].spreadVirus();
-                }
-            }// Infect new or existing continent;
-            changes[0] += continent.infest(virus.spread);
-            changes[1] += continent.deaths(virus.deadliness);
-            changes[2] += continent.growth(this.growthRate);
-        });
-
-        this.infectedPeople += changes[0];
-        this.dead += changes[1];
-        this.population += changes[2];
+    public get population(): number {
+        return this._population;
     }
 
-    public calculatePopulationOnStart(): void {
-        this.population = this.continents.reduce((accumulator: number, continent: Continent) =>
-            accumulator += continent.population, 0);
+    public set population(notOfUse: number) {
+        this._population = this._continents.reduce((accumulator: number, continent: Continent) =>
+        accumulator += continent.population, 0);
+    }
+
+    public get dead(): number {
+        return this._dead;
+    }
+
+    public set dead(numberToSet: number) {
+        this._dead = this._continents.reduce((accumulator: number, continent: Continent) =>
+            accumulator += continent.deadPopulation, 0);
+    }
+
+    public get growthRate(): number {
+        return this._growthRate;
+    }
+
+    public get infectedPeople(): number {
+        return this._infectedPeople;
+    }
+
+    public set infectedPeople(notOfUse: number) {
+        this._infectedPeople = this._continents.reduce((accumulator: number, continent: Continent) =>
+        accumulator += continent.infestedPopulation, 0);
+    }
+
+    public get continents(): Continent[] {
+        return this._continents;
     }
 }

@@ -1,12 +1,9 @@
-import { IUpgrade } from './../upgrades/IUpgrade';
-
 export class Virus {
     private readonly _virusName: string;
     private _spread: number;
     private _deadliness: number;
     private _chanceOfDiscovery: number;
     private _chanceOfMutation: number;
-    private _points: number;
 
     constructor(name: string) {
         this._virusName = name;
@@ -16,32 +13,38 @@ export class Virus {
         this._chanceOfMutation = 0;
     }
 
+    public get virusName(): string {
+        return this._virusName;
+    }
     public get spread(): number {
         return this._spread;
+    }
+
+    public set spread(chance: number) {
+        this._spread += chance;
     }
 
     public get deadliness(): number {
         return this._deadliness;
     }
 
-    public detected():  boolean {
-        const randomNumberRange: number = Math.random();
-        const chanceNumber: number = Math.random();
-        if (randomNumberRange + this._chanceOfDiscovery > chanceNumber &&
-            randomNumberRange - this._chanceOfDiscovery < chanceNumber) {
-        return true;
-        }
-
-        return false;
+    public set deadliness(chance: number) {
+        this._deadliness += chance;
     }
 
-    public points(): number {
-        return this._points;
+    public get chanceOfDiscovery(): number {
+        return this._chanceOfDiscovery;
     }
 
-    public upgradeVirus(upgrade: IUpgrade, cost: number): void {
-        this._points -= cost;
-        this[upgrade.propertyToUpgrade] += upgrade.upgradeEffect;
+    public set chanceOfDiscovery(changeSetter: number) {
+        this._chanceOfDiscovery = changeSetter;
     }
 
+    public get chanceOfMutation(): number{
+        return this._chanceOfMutation;
+    }
+
+    public set chanceOfMutation(chanceChange: number){
+        this._chanceOfMutation += chanceChange;
+    }
 }

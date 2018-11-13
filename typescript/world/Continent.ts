@@ -1,4 +1,5 @@
 export class Continent {
+
     public readonly _continentName: string;
     private _population: number;
     private _deadPopulation: number;
@@ -14,40 +15,31 @@ export class Continent {
         return this._population;
     }
 
-    public infest(rate: number): number {
-        if (this._isInfected === false) {
-            return 0;
-        }
-        const infestation: number = Math.floor(Math.random() * (rate + 1));
-        this._infestedPopulation += infestation;
-
-        return infestation;
+    public set population(numberToSet: number) {
+        this._population = numberToSet;
     }
 
-    public deaths(rate: number): number {
-        const deadliness: number = Math.floor(this._infestedPopulation * rate * Math.random());
-        this._deadPopulation += deadliness;
-        this._infestedPopulation -= deadliness;
-
-        return deadliness;
-    }
-
-    public growth(rate: number): number {
-        const growth: number = (this._population + this._infestedPopulation) * rate;
-        this._population += growth;
-
-        return growth;
-    }
-
-    public isInfected(): boolean {
+    public get isInfected(): boolean {
         return this._isInfected;
+    }
+
+    public set isInfected(bool: boolean) {
+        this._isInfected = true;
     }
 
     public get infestedPopulation(): number {
         return this._infestedPopulation;
     }
 
-    public spreadVirus(): void {
-        this._isInfected = true;
+    public set infestedPopulation(numberToAdd: number) {
+        this._infestedPopulation = numberToAdd;
+    }
+
+    public get deadPopulation(): number {
+        return this._deadPopulation;
+    }
+
+    public set deadPopulation(deaths: number) {
+        this._deadPopulation += deaths;
     }
 }

@@ -7,7 +7,7 @@ export class Player {
     }
 
     public set points(inputPoints: number) {
-        this._points = inputPoints;
+        this._points += inputPoints;
     }
 
     public get rounds(): number {

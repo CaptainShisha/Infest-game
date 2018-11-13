@@ -2,6 +2,7 @@ import * as $ from 'jquery';
 import { IUpgrade } from './IUpgrade';
 
 export class Upgrade implements IUpgrade {
+
     private _upgradeName: string;
     private _upgradeDescription: string;
     private _upgradePrice: number;
