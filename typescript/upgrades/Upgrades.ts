@@ -4,31 +4,31 @@ export class Upgrades {
     private _Upgrades: IUpgrade[];
     private _UsedUpgrades: IUpgrade[];
 
-    constructor(){
+    constructor() {
         this._Upgrades = [];
     }
 
-    public RemoveUpgrade(upgrade: IUpgrade): void {
-        this._Upgrades.filter((element) => element !== upgrade)
+    public removeUpgrade(upgrade: IUpgrade): void {
+        this._Upgrades.filter((element: IUpgrade) => element !== upgrade);
     }
 
-    public AddUpgrade(upgrade: IUpgrade): void {
-        if(!this._UsedUpgrades.includes(upgrade)){
+    public addUpgrade(upgrade: IUpgrade): void {
+        if (!this._UsedUpgrades.includes(upgrade)) {
              this._Upgrades.push(upgrade);
         } else {
-            throw new Error("There is such an upgrade!")
+            throw new Error('There is such an upgrade!');
         }
     }
 
     public get Upgrades(): IUpgrade[] {
         return this._Upgrades.slice(0, this._Upgrades.length);
     }
-    
-    public DisplayAllUpgrades(): void {
-        this._Upgrades.forEach((upgrade) => upgrade.createUpgradeTabInBrowser());
+
+    public displayAllUpgrades(): void {
+        this._Upgrades.forEach((upgrade: IUpgrade) => upgrade.createUpgradeTabInBrowser());
     }
 
-    public DisplayAllRemovedUpgrades(): void {
-        this._UsedUpgrades.forEach((upgrade) => upgrade.createUpgradeTabInBrowser());
+    public displayAllRemovedUpgrades(): void {
+        this._UsedUpgrades.forEach((upgrade: IUpgrade) => upgrade.createUpgradeTabInBrowser());
     }
 }

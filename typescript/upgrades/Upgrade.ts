@@ -1,5 +1,5 @@
-import { IUpgrade } from './IUpgrade';
 import * as $ from 'jquery';
+import { IUpgrade } from './IUpgrade';
 
 export class Upgrade implements IUpgrade {
     private _upgradeName: string;
@@ -8,7 +8,7 @@ export class Upgrade implements IUpgrade {
     private _upgradeEffect: number;
     private _propertyToUpgrade: string;
 
-    constructor(name: string, description: string, price: number, effect: number, propertyToUpgrade: string){
+    constructor(name: string, description: string, price: number, effect: number, propertyToUpgrade: string) {
         this._upgradeName = name;
         this._upgradeDescription = description;
         this._upgradePrice = price;
@@ -16,27 +16,27 @@ export class Upgrade implements IUpgrade {
         this._propertyToUpgrade = propertyToUpgrade;
     }
 
-    public get upgradeName(): string{
+    public get upgradeName(): string {
         return this._upgradeName;
     }
 
-    public get upgradePrice(): number{
+    public get upgradePrice(): number {
         return this._upgradePrice;
     }
 
-    public get upgradeEffect(): number{
+    public get upgradeEffect(): number {
         return this._upgradeEffect;
     }
 
-    public get description(): string{
+    public get description(): string {
         return this._upgradeDescription;
     }
 
-    public get propertyToUpgrade(): string{
+    public get propertyToUpgrade(): string {
         return this._propertyToUpgrade;
     }
 
-    public createUpgradeTabInBrowser(): void{
+    public createUpgradeTabInBrowser(): void {
         $('#itemsContainer')
         .append(`            <div class="upgradeContainer">
         <div class="upgradeName">

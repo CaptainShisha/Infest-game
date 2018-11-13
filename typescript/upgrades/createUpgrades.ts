@@ -1,12 +1,10 @@
 import { Upgrade } from './Upgrade';
 import { Upgrades } from './Upgrades';
 
-const UpgradesCollection = new Upgrades();
+const upgradesCollection: Upgrades = new Upgrades();
 
-(()=>{
-    UpgradesCollection.AddUpgrade(new Upgrade('Virus resistance', 'Makes your virus more resistent' , 5 , 0.50, '_spread'));
-    UpgradesCollection.AddUpgrade(new Upgrade('Virus Deadliness', 'Makes your virus deadlier' , 300 , 0.50, '_deadliness'));
-    UpgradesCollection.AddUpgrade(new Upgrade('Virus mutation', 'Bigger chance of mutation' , 300 , 0.50, '_spread'));    
-})()
+upgradesCollection.addUpgrade(new Upgrade('Virus resistance', 'Makes your virus more resistent' , 5 , 0.5, '_spread'));
+upgradesCollection.addUpgrade(new Upgrade('Virus Deadliness', 'Makes your virus deadlier' , 300 , 0.5, '_deadliness'));
+upgradesCollection.addUpgrade(new Upgrade('Virus mutation', 'Bigger chance of mutation' , 300 , 0.5, '_spread'));
 
-export { UpgradesCollection };
+export { upgradesCollection };

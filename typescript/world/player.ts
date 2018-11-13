@@ -1,4 +1,4 @@
-export class Player{
+export class Player {
     private _points: number = 0;
     private _rounds: number = 0;
 
@@ -6,7 +6,7 @@ export class Player{
         return this._points;
     }
 
-    public set points(inputPoints: number){
+    public set points(inputPoints: number) {
         this._points = inputPoints;
     }
 
@@ -14,7 +14,7 @@ export class Player{
         return this._rounds;
     }
 
-    public set rounds(input: number){
+    public set rounds(input: number) {
         this._rounds += 1;
     }
 }

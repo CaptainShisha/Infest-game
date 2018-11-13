@@ -27,7 +27,8 @@
         "no-consecutive-blank-lines": true,
         "no-parameter-reassignment": false,
         "align": false,
-        "no-parameter-properties": false
+        "no-parameter-properties": false,
+        "insecure-random": false
     },
     "rulesDirectory": []
 }

@@ -1,4 +1,4 @@
-export interface IUpgrade{
+export interface IUpgrade {
     upgradeName: string;
     upgradePrice: number;
     upgradeEffect: number;
