@@ -1,14 +1,5 @@
-import { Continent, Planet, Player, Virus } from './world/index';
-
-(() => {
-
-});
-
-const gameLoop: Function = (): boolean => {
-
-} ;
-
-const initialiseGame: Function = (virusName: string, startContinent: String): Object => {
+import { Continent, Planet, Player, Virus } from './../world/index';
+export const initialiseGame: Function = (virusName: string, startContinent: String): Object => {
     const planet: Planet = new Planet();
 
     planet.continents.push(new Continent(4436224000, 'Asia'));
