@@ -8,8 +8,6 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const $ = __importStar(require("jquery"));
-(() => {
-    $('#virusNameInput').on('click', () => {
-        $("#virusNameInput").text = '';
-    });
+$('#virusNameInput').on('click', () => {
+    $("#virusNameInput").text = '';
 });
