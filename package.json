@@ -17,9 +17,12 @@
     "@types/inversify": "^2.0.33",
     "@types/jquery": "^3.3.22",
     "@types/reflect-metadata": "^0.1.0",
+    "babel": "^6.23.0",
     "inversify": "^5.0.1",
     "jquery": "^3.3.1",
-    "reflect-metadata": "^0.1.12"
+    "reflect-metadata": "^0.1.12",
+    "tsc": "^1.20150623.0",
+    "typescript-cli": "^0.1.0"
   },
   "devDependencies": {
     "@types/cpx": "^1.5.0",

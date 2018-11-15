@@ -53,8 +53,8 @@ export class Upgrade implements IUpgrade {
     }
 
     public createUpgradeTabInBrowser(): void {
-        $('#itemsContainer')
-        .append(`            <div class="upgradeContainer">
+        $('#upgradesContainer')
+        .append(`            <div class="upgrade">
         <div class="upgradeName">
             <span>${this.upgradeName}</span><br>
             <span>${this.description}</span>

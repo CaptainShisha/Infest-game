@@ -74,7 +74,8 @@ path:hover {
 }
 
 #inputFrame {
-    border: solid 2px black
+    border: solid 2px black;
+    text-align: center;
 }
 
 div .smallContinents {
@@ -101,7 +102,7 @@ div .smallContinents p {
 }
 
 #inputFrame input {
-    
+
 }
 
 #selectContinent {
