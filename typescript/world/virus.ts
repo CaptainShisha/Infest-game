@@ -8,6 +8,9 @@ export class Virus implements IVirus {
     private _chanceOfMutation: number;
 
     constructor(name: string) {
+        if (name === null || name === undefined || name.length < 2 || name.length > 20) {
+            throw new Error ('Virus name must be inserted and more than 2 and less than 20 simbols!');
+        }
         this._virusName = name;
         this._spread = 1;
         this._deadliness = 0;
@@ -23,6 +26,9 @@ export class Virus implements IVirus {
     }
 
     public set spread(chance: number) {
+        if ((this._spread - chance) < 0) {
+            throw new Error ('Spread can not be less than 0!')
+        } 
         this._spread += chance;
     }
 
@@ -31,6 +37,9 @@ export class Virus implements IVirus {
     }
 
     public set deadliness(chance: number) {
+        if ((this._deadliness - chance) < 0) {
+            throw new Error ('Deadliness can not be less than 0!')
+        } 
         this._deadliness += chance;
     }
 
@@ -39,6 +48,9 @@ export class Virus implements IVirus {
     }
 
     public set chanceOfDiscovery(changeSetter: number) {
+        if (changeSetter < 0) {
+            throw new Error ('ChanceOfDiscovery can not be less than 0!')
+        }
         this._chanceOfDiscovery = changeSetter;
     }
 
@@ -47,6 +59,9 @@ export class Virus implements IVirus {
     }
 
     public set chanceOfMutation(chanceChange: number) {
+        if (chanceChange < 0) {
+            throw new Error ('ChanceOfMutation can not be less than 0!')
+        } 
         this._chanceOfMutation += chanceChange;
     }
 }

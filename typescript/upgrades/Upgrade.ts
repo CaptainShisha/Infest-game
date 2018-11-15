@@ -10,6 +10,21 @@ export class Upgrade implements IUpgrade {
     private _propertyToUpgrade: string;
 
     constructor(name: string, description: string, price: number, effect: number, propertyToUpgrade: string) {
+        if (!name || name.length > 50) {
+            throw new Error('Must insert name or names is more than 50 symbols!');
+        }
+        if (!description || description.length > 50) {
+            throw new Error('Must insert description or descriptions is more than 50 symbols!');
+        }
+        if (!price || price < 0) {
+            throw new Error('Must insert price or your price is less than 0!');
+        }
+        if (!effect) {
+            throw new Error('Must insert effect!');
+            }
+        if (!propertyToUpgrade || propertyToUpgrade[0] !== '_' || propertyToUpgrade.length > 50) {
+            throw new Error('Must insert correct propertyToUpgrade!');
+        }
         this._upgradeName = name;
         this._upgradeDescription = description;
         this._upgradePrice = price;
