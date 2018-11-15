@@ -7,4 +7,6 @@ upgrades.addUpgrade(new Upgrade('Virus resistance', 'Makes your virus more resis
 upgrades.addUpgrade(new Upgrade('Virus Deadliness', 'Makes your virus deadlier' , 300 , 0.5, '_deadliness'));
 upgrades.addUpgrade(new Upgrade('Virus mutation', 'Bigger chance of mutation' , 300 , 0.5, '_spread'));
 
+upgrades.displayAllUpgrades();
+
 export {upgrades};
