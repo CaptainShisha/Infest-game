@@ -1,7 +1,7 @@
 import * as $ from 'jquery';
 import { Upgrades } from './upgrades/Upgrades';
 
-export abstract class manipulateDOM {
+export class ManipulateDOM {
     public static TOGGLEUPGRADES(upgrades: Upgrades): any {
             $('#gameWrapper').toggle(600);
             $('#updatesMenuContainer').toggle(600);
