@@ -1,4 +1,3 @@
-import * as $ from 'jquery';
 import { IUpgrade } from './contracts/IUpgrade';
 
 export class Upgrade implements IUpgrade {

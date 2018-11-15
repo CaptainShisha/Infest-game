@@ -1,7 +1,6 @@
-import { IUpgrade } from './../../typescript/upgrades/contracts/IUpgrade';
 // tslint:disable-next-line
 import 'reflect-metadata';
-import { Upgrade } from './../../typescript/upgrades/Upgrade';
+import { Upgrade } from './../../upgrades/Upgrade';
 
 describe('Upgrade', () => {
 
