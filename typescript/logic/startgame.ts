@@ -9,7 +9,9 @@ export const initialiseGame: Function = (virusName: string, startContinent: Stri
     planet.continents.push(new Continent(422535000, 'South America'));
     planet.continents.push(new Continent(38304000, 'Oceania'));
 
+    planet.continents.filter((continent: Continent) =>
+        continent._continentName === startContinent).isInfected();
     const virus: Virus = new Virus(virusName);
 
-    return { planet, virus};
+    return [ planet, virus ];
 };

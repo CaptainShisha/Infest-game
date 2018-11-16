@@ -13,7 +13,7 @@ export class Upgrades {
     }
 
     public addUpgrade(upgrade: IUpgrade): void {
-        if (!this._UsedUpgrades.includes(upgrade)) {
+        if (this._Upgrades.indexOf(upgrade) !== -1) {
              this._Upgrades.push(upgrade);
         } else {
             throw new Error('There is such an upgrade!');
