@@ -7,9 +7,9 @@ export class Virus implements IVirus {
     private _chanceOfDiscovery: number;
     private _chanceOfMutation: number;
 
-    constructor(name: string) {
+    public constructor(name: string) {
         if (name === null || name === undefined || name.length < 2 || name.length > 20) {
-            throw new Error ('Virus name must be inserted and more than 2 and less than 20 simbols!');
+            throw new Error ('Virus name must be inserted and more than 2 and less than 20 symbols!');
         }
         this._virusName = name;
         this._spread = 1;
