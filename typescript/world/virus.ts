@@ -27,8 +27,8 @@ export class Virus implements IVirus {
 
     public set spread(chance: number) {
         if ((this._spread - chance) < 0) {
-            throw new Error ('Spread can not be less than 0!')
-        } 
+            throw new Error ('Spread can not be less than 0!');
+        }
         this._spread += chance;
     }
 
@@ -38,8 +38,8 @@ export class Virus implements IVirus {
 
     public set deadliness(chance: number) {
         if ((this._deadliness - chance) < 0) {
-            throw new Error ('Deadliness can not be less than 0!')
-        } 
+            throw new Error ('Deadliness can not be less than 0!');
+        }
         this._deadliness += chance;
     }
 
@@ -49,7 +49,7 @@ export class Virus implements IVirus {
 
     public set chanceOfDiscovery(changeSetter: number) {
         if (changeSetter < 0) {
-            throw new Error ('ChanceOfDiscovery can not be less than 0!')
+            throw new Error ('ChanceOfDiscovery can not be less than 0!');
         }
         this._chanceOfDiscovery = changeSetter;
     }
@@ -60,8 +60,8 @@ export class Virus implements IVirus {
 
     public set chanceOfMutation(chanceChange: number) {
         if (chanceChange < 0) {
-            throw new Error ('ChanceOfMutation can not be less than 0!')
-        } 
+            throw new Error ('ChanceOfMutation can not be less than 0!');
+        }
         this._chanceOfMutation += chanceChange;
     }
 }
