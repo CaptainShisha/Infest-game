@@ -7,8 +7,6 @@ import { infest } from './infest';
 import { growPopulation } from './populationGrowth';
 
 export const constmakeTurn: Function = (planet: Planet, virus: Virus, player: Player): void => {
-    const changes: number[] = [];
-
     planet.continents.forEach((continent: Continent) => {
         if (continent.isInfected) {
             const chance: number = Math.random();
@@ -21,7 +19,9 @@ export const constmakeTurn: Function = (planet: Planet, virus: Virus, player: Pl
         growPopulation(continent, planet.growthRate);
     });
 
-    planet.infectedPeople = changes[0];
-    planet.dead = changes[1];
-    planet.population = changes[2];
+    planet.dead = 1;
+    planet.population = 1;
+    planet.infectedPeople = 1;
+
+    player.points = 2;
 };
