@@ -42,6 +42,6 @@ export class Continent implements IContinent {
     }
 
     public set deadPopulation(deaths: number) {
-        this._deadPopulation += deaths;
+        this._deadPopulation = deaths;
     }
 }

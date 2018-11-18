@@ -5,7 +5,7 @@ import { Virus } from './virus';
 export class Planet implements IPlanet {
     private _population: number = 0;
     private _dead: number = 0;
-    private readonly _growthRate: number = 1.8;
+    private readonly _growthRate: number = 1.2;
     private _infectedPeople: number;
     private _continents: Continent[];
 
@@ -18,9 +18,8 @@ export class Planet implements IPlanet {
     }
 
     public set population(notOfUse: number) {
-        const popul: number = this._continents.reduce((accumulator: number, continent: Continent) =>{
-            return accumulator += continent.population;
-        }, 0);
+        const popul: number = this._continents.reduce((accumulator: number, continent: Continent) =>
+            accumulator += continent.population, 0);
         this._population = popul;
         console.log(`this._population - ${this._population}, popul = ${popul}`);
     }
