@@ -1,14 +1,15 @@
 import { Continent } from './../world/Continent';
 
-export const infest: Function = (continent: Continent, rate: number): number => {
+export const infest: Function = (continent: Continent, rate: number): void => {
 
-    if (continent.isInfected === false) {
-        return 0;
+    if (continent.isInfected === true) {
+        console.log(continent);
+        console.log(continent.infestedPopulation);
+        const infestation: number = Math.floor(Math.random() * (rate + 1));
+        continent.infestedPopulation = Math.round(continent.infestedPopulation * infestation);
+        if (continent.population < continent.infestedPopulation){
+            continent.infestedPopulation = continent.population;
+        }
+        console.log(continent.infestedPopulation);
     }
-
-    const infestation: number = Math.floor(Math.random() * (rate + 1));
-    const continentPopulation: number = continent.population;
-    continent.infestedPopulation = continentPopulation + (continentPopulation * continent.infestedPopulation);
-
-    return infestation;
-}
+};

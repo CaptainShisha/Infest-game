@@ -3,9 +3,9 @@ import { IContinent } from './contracts/IContinent';
 export class Continent implements IContinent {
 
     public readonly _continentName: string;
-    private _population: number;
-    private _deadPopulation: number;
-    private _infestedPopulation: number;
+    private _population: number = 0;
+    private _deadPopulation: number = 0;
+    private _infestedPopulation: number = 0;
     private _isInfected: boolean = false;
 
     constructor(population: number, name: string) {

@@ -3,7 +3,7 @@ import { IPlanet } from './contracts/IPlanet';
 import { Virus } from './virus';
 
 export class Planet implements IPlanet {
-    private _population: number;
+    private _population: number = 0;
     private _dead: number = 0;
     private readonly _growthRate: number;
     private _infectedPeople: number;
@@ -18,8 +18,11 @@ export class Planet implements IPlanet {
     }
 
     public set population(notOfUse: number) {
-        this._population = this._continents.reduce((accumulator: number, continent: Continent) =>
-        accumulator += continent.population, 0);
+        this._population = this._continents.reduce((accumulator: number, continent: Continent) =>{
+            console.log(continent.population);
+
+            return accumulator += continent.population;
+        }, 0);
     }
 
     public get dead(): number {
