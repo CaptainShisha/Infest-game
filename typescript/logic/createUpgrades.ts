@@ -1,6 +1,7 @@
 import { Upgrade } from './../upgrades/Upgrade';
 import { Upgrades } from './../upgrades/Upgrades';
 
+const createUpgrades: Function = (): Upgrades => {
 const upgrades: Upgrades = new Upgrades();
 
 upgrades.addUpgrade(new Upgrade('Spread by spores', 'Makes your virus more resistent' , 5 , 0.5, '_spread'));
@@ -30,4 +31,7 @@ upgrades.addUpgrade(new Upgrade('New alien form', 'Makes your virus deadlier' , 
 
 upgrades.displayAllUpgrades();
 
-export {upgrades};
+return upgrades;
+};
+
+export {createUpgrades};
