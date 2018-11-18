@@ -9,7 +9,7 @@ export const upgradeVirus: Function = (virus: Virus, upgrade: IUpgrade, player: 
 
         return false;
     } else {
-    player.points = -cost;
+    player.points = cost;
     virus[upgrade.propertyToUpgrade] += upgrade.upgradeEffect;
 
     return true;

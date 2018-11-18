@@ -22,15 +22,6 @@ const gameLoop: Function =  (virus: Virus, planet: Planet, player: Player): void
     $('#infestefPeople').text(`Infested people: ${planet.infectedPeople}`);
     setTimeout(() => gameLoop(virus, planet, player), 2000);
 
-    $('.upgradeButton').on('click', (sender: JQueryEventObject) => {
-        const currentUpgrade: IUpgrade = gameUpgrades.Upgrades
-        .filter((upgrade: IUpgrade) => upgrade.upgradeName === sender.currentTarget.parentElement.parentElement.children[0].textContent)[0];
-        if (upgradeVirus(virus, currentUpgrade, player)) {
-            gameUpgrades.removeUpgrade(currentUpgrade);
-            sender.currentTarget.parentElement.parentElement.remove();
-            alert('Successfully bought upgrade!')
-        }
-    });
 };
 
 const listener: Function = (): void => {
@@ -55,6 +46,15 @@ const listener: Function = (): void => {
             $('#roundsPlayed').text(`Rounds played: ${player.rounds}`);
             $('#Points').text(`Points: ${player.points}`);
             gameLoop(virus, planet, player);
+            $('.upgradeButton').on('click', (buttonSender: JQueryEventObject) => {
+                const currentUpgrade: IUpgrade = gameUpgrades.Upgrades
+                .filter((upgrade: IUpgrade) => upgrade.upgradeName === buttonSender.currentTarget.parentElement.parentElement.children[0].textContent)[0];
+                if (upgradeVirus(virus, currentUpgrade, player)) {
+                    gameUpgrades.removeUpgrade(currentUpgrade);
+                    buttonSender.currentTarget.parentElement.parentElement.remove();
+                    alert('Successfully bought upgrade!')
+                }
+            });
         } else {
             alert('Input a name!');
         }
