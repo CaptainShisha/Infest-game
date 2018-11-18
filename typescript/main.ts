@@ -24,6 +24,7 @@ const gameLoop: Function =  (virus: Virus, planet: Planet, player: Player): void
 
 };
 
+
 const listener: Function = (): void => {
     $('#virusNameInput').on('click', () => {
         if ($('#virusNameInput').val() === 'Enter virus name') {
@@ -48,10 +49,10 @@ const listener: Function = (): void => {
             gameLoop(virus, planet, player);
             $('.upgradeButton').on('click', (buttonSender: JQueryEventObject) => {
                 const currentUpgrade: IUpgrade = gameUpgrades.Upgrades
-                .filter((upgrade: IUpgrade) => upgrade.upgradeName === buttonSender.currentTarget.parentElement.parentElement.children[0].textContent)[0];
+.filter((upgrade: IUpgrade) => upgrade.upgradeName === buttonSender.currentTarget.parentElement.parentElement.children[0].textContent)[0];
                 if (upgradeVirus(virus, currentUpgrade, player)) {
                     gameUpgrades.removeUpgrade(currentUpgrade);
-                    buttonSender.currentTarget.parentElement.parentElement.remove();
+                    buttonSender.currentTarget.parentElement.parentElement.parentElement.remove();
                     alert('Successfully bought upgrade!')
                 }
             });

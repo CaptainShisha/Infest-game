@@ -19,9 +19,9 @@ export const makeTurn: Function = (planet: Planet, virus: Virus): void => {
                 planet.continents[chance1].isInfected = true;
             }
         }// Infect new or existing continent;
-        infestedPeopleForLog += infest(continent, virus.spread);
-        deadPeopleForLog += deaths(continent, virus.deadliness);
         growPopulation(continent, planet.growthRate);
+        infestedPeopleForLog += Math.round(infest(continent, virus.spread));
+        deadPeopleForLog += Math.round(deaths(continent, virus.deadliness));
     });
 
     planet.dead = 1; // Calculates dead people
