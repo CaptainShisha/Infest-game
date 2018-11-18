@@ -32,7 +32,7 @@ const listener: Function = (): void => {
             const virus: Virus = new Virus($('#virusNameInput').val().toString());
             const player: Player = new Player();
             $('#startingBlock').remove();
-            $('#gameContainer').show();
+            $('#gameContainer').css('display', 'grid');
             gameLoop(virus, planet, player);
         } else {
             alert('Input a name!');
