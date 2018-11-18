@@ -9,7 +9,7 @@ export class Continent implements IContinent {
     private _isInfected: boolean = false;
 
     constructor(population: number, name: string) {
-        this._population = population;
+        this.population = population;
         this._continentName = name;
     }
 

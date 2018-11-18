@@ -9,10 +9,13 @@ export const initialiseGame: Function = (startContinent: String): Planet => {
     planet.continents.push(new Continent(422535000, 'South America'));
     planet.continents.push(new Continent(38304000, 'Australia'));
 
-    const startingContinent: Continent[] = planet.continents.filter((continent: Continent) =>
-        continent._continentName === startContinent);
-    startingContinent[0].isInfected = true;
+    const startingContinentIndex: number = planet.continents.indexOf(planet.continents
+        .filter((continent: Continent) => continent._continentName === startContinent)[0]);
+    planet.continents[startingContinentIndex].isInfected = true;
+
     console.log(planet);
+    planet.population = 0;
+    console.log(planet.population);
 
     return planet;
 };
