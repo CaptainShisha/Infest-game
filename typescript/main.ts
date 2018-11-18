@@ -27,10 +27,12 @@ const listener: Function = (): void => {
 
         if (text === 'Enter virus name') {
             $('#virusNameInput').val('');
-        } else if (!text && text.replace(/\s/g, '') !== '') {
+        } else if (text.replace(/\s/g, '') !== '') {
             const planet: Planet = initialiseGame(sender.currentTarget.children[0].textContent);
             const virus: Virus = new Virus($('#virusNameInput').val().toString());
             const player: Player = new Player();
+            $('#startingBlock').remove();
+            $('#gameContainer').show();
             gameLoop(virus, planet, player);
         } else {
             alert('Input a name!');
