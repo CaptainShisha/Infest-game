@@ -12,7 +12,7 @@ export class Player implements IPlayer {
         this._points -= cost;
     }
     public pointsIncrement: Function = (): void => {
-        this._points += 1;
+        this._points += 1.5;
     }
 
     public get rounds(): number {

@@ -14,6 +14,9 @@ const gameLoop: Function =  (virus: Virus, planet: Planet, player: Player): void
     }
     makeTurn(planet, virus);
     player.pointsIncrement();
+    player.roundsIncrement();
+    $('#roundsPlayed').text(`Rounds played: ${player.rounds}`);
+    $('#Points').text(`Points: ${player.points}`);
     setTimeout(() => gameLoop(virus, planet, player), 2000);
 };
 
@@ -35,6 +38,9 @@ const listener: Function = (): void => {
             const player: Player = new Player();
             $('#startingBlock').remove();
             $('#gameContainer').css('display', 'grid');
+            $('#virusName').text(`Virus name: ${virus.virusName}`);
+            $('#roundsPlayed').text(`Rounds played: ${player.rounds}`);
+            $('#Points').text(`Points: ${player.points}`);
             gameLoop(virus, planet, player);
         } else {
             alert('Input a name!');
