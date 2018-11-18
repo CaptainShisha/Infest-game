@@ -17,6 +17,7 @@ const gameLoop: Function =  (virus: Virus, planet: Planet, player: Player): void
     player.roundsIncrement();
     $('#roundsPlayed').text(`Rounds played: ${player.rounds}`);
     $('#Points').text(`Points: ${player.points}`);
+    $('#infestefPeople').text(`Infested people: ${planet.infectedPeople}`)
     setTimeout(() => gameLoop(virus, planet, player), 2000);
 
     $('.upgradeButton').on('click', (sender: JQueryEventObject) => {
