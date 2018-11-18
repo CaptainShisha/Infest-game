@@ -10,7 +10,7 @@ const  gameLoop: Function =  (virus: Virus, planet: Planet, player: Player): voi
     }
     makeTurn(planet, virus);
     player.pointsIncrement();
-    console.log('delay');
+
     setTimeout(() => gameLoop(virus, planet, player), 2000);
 };
 
@@ -41,4 +41,7 @@ const listener: Function = (): void => {
 
 };
 
+const logs: Function = (): void => {
+    `This round you have infected : #infectedPeople, killed: #killedPeople and #continent has been infected}`
+}
 listener();

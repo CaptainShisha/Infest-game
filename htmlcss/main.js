@@ -8,5 +8,3 @@
     $('.smallContinents').click((sender)=> {
        sender.currentTarget.children[0].textContent
     });
-
-console.log('Ebete si maikata VS');

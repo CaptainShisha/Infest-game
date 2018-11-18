@@ -21,7 +21,6 @@ export class Planet implements IPlanet {
         const popul: number = this._continents.reduce((accumulator: number, continent: Continent) =>
             accumulator += continent.population, 0);
         this._population = popul;
-        console.log(`this._population - ${this._population}, popul = ${popul}`);
     }
 
     public get dead(): number {

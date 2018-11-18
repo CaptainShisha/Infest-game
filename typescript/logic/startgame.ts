@@ -13,9 +13,7 @@ export const initialiseGame: Function = (startContinent: String): Planet => {
         .filter((continent: Continent) => continent._continentName === startContinent)[0]);
     planet.continents[startingContinentIndex].isInfected = true;
 
-    console.log(planet);
     planet.population = 0;
-    console.log(planet.population);
 
     return planet;
 };
