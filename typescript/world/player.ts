@@ -16,7 +16,7 @@ export class Player implements IPlayer {
         return this._rounds;
     }
 
-    public set rounds(input: number) {
+    public roundsIncrement: Function = (): void => {
         this._rounds += 1;
     }
 }

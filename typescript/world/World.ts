@@ -5,7 +5,7 @@ import { Virus } from './virus';
 export class Planet implements IPlanet {
     private _population: number = 0;
     private _dead: number = 0;
-    private readonly _growthRate: number;
+    private readonly _growthRate: number = 1.8;
     private _infectedPeople: number;
     private _continents: Continent[];
 
