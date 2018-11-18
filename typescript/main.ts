@@ -16,14 +16,13 @@ const  gameLoop: Function =  (virus: Virus, planet: Planet, player: Player): voi
 
 const listener: Function = (): void => {
     $('#virusNameInput').on('click', () => {
-        if ($('#virusNameInput').val() === 'Enter virus name'){
+        if ($('#virusNameInput').val() === 'Enter virus name') {
             $('#virusNameInput').val('');
         }
     });
 
     $('.smallContinents').on('click', (sender: JQueryEventObject) => {
         const text: string = $('#virusNameInput').val().toString();
-        console.log(text);
 
         if (text === 'Enter virus name') {
             $('#virusNameInput').val('');
@@ -41,7 +40,4 @@ const listener: Function = (): void => {
 
 };
 
-const logs: Function = (): void => {
-    `This round you have infected : #infectedPeople, killed: #killedPeople and #continent has been infected}`
-}
 listener();

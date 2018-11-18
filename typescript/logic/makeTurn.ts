@@ -1,10 +1,10 @@
-import { log } from './logs';
 import { Virus } from '../world/virus';
 import { Continent } from './../world/Continent';
 import { Player } from './../world/player';
 import { Planet } from './../world/World';
 import { deaths } from './death';
 import { infest } from './infest';
+import { log } from './logs';
 import { growPopulation } from './populationGrowth';
 
 export const makeTurn: Function = (planet: Planet, virus: Virus): void => {
@@ -29,7 +29,7 @@ export const makeTurn: Function = (planet: Planet, virus: Virus): void => {
     planet.infectedPeople = 1; // Calculates the infected people
 
     let deadPeopleLog: string = '';
-    if (deadPeopleForLog !== 0){
+    if (deadPeopleForLog !== 0) {
         deadPeopleLog = `${deadPeopleForLog} have been killed`;
     }
     log(`This turn ${infestedPeopleForLog} people have been infested ${deadPeopleLog}`);
