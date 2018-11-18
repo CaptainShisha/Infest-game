@@ -9,9 +9,22 @@ html, body {
     margin: 0 auto;
     padding: 0;
     text-align: center;
-    background-color: rgb(148, 228, 241);
     font-size: 2.2vh;
-    display: none;
+    /* display: none; */
+}
+
+#globalStatsContainer {
+    background: rgba(17, 72, 117, 0.35);
+    color: aliceblue;
+}
+
+#worldStats {
+    color: aliceblue;
+}
+
+#logContainer {
+    background: rgba(17, 72, 117, 0.35);
+    color: aliceblue;
 }
 
 #worldAndContinentsHolder{
@@ -19,11 +32,20 @@ html, body {
     grid-template-rows: 1fr 6fr;
     border: solid black 1.3px;
     border-right: 0;
+    background-image: url("./assets/starSky.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover
 }
 
 #upgradesAndLogHolder{
     display: flex;
     flex-direction: column;
+    background-image: url("./assets/dnaUps.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover
+
 }
 
 #upgradesContainer, #logContainer{
@@ -35,6 +57,9 @@ html, body {
 
 #upgradesContainer{
     height: 44.5vh;
+    background: rgba(17, 72, 117, 0.35);
+    color: aliceblue;
+
 }
 
 #globalStatsContainer{
@@ -44,10 +69,10 @@ html, body {
 
 #continentsContainer{
     border-top: solid black 1px;
-    background-image: url("./assets/grid.png");
+    /* background-image: url("./assets/grid.png");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
 }
 
 
@@ -65,7 +90,7 @@ path {
 }
 
 path:hover {
-    fill: rgb(28, 168, 121);
+    fill: rgb(40, 155, 201);
 }
 
 .land {
