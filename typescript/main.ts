@@ -18,6 +18,19 @@ const gameLoop: Function =  (virus: Virus, planet: Planet, player: Player): void
     $('#roundsPlayed').text(`Rounds played: ${player.rounds}`);
     $('#Points').text(`Points: ${player.points}`);
     setTimeout(() => gameLoop(virus, planet, player), 2000);
+
+    $('.upgradeButton').on('click', (sender: JQueryEventObject) => {
+        const currentUpgrade: IUpgrade = gameUpgrades.Upgrades
+        .filter((upgrade: IUpgrade) => upgrade.upgradeName === sender.currentTarget.parentElement.parentElement.children[0].textContent)[0];
+        console.log(currentUpgrade);
+        if (upgradeVirus(virus, currentUpgrade, player)) {
+            console.log('Successfully ugpraded virus');
+            upgradesCollection.removeUpgrade(currentUpgrade);
+            sender.currentTarget.parentElement.remove();
+        } else {
+            console.log('No $$');
+        }
+    });
 };
 
 const listener: Function = (): void => {
