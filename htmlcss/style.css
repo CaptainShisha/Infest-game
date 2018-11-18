@@ -120,8 +120,8 @@ div .smallContinents {
 div .smallContinents:hover {
     border: 2px solid blue;
     border-radius: 15px;
-    box-shadow: 0 0 10px royalblue;
-    background: rgba(220,220,220,0.8);
+    box-shadow: 0 0 20px royalblue;
+    background: rgba(83, 132, 172,0.8);
 
 }
 
@@ -138,7 +138,7 @@ div .smallContinents p {
 #inputFrame {
     width: 80%;
     margin: auto;
-    background: rgba(220,220,220,0.91);
+    background: rgba(83, 132, 172, 0.91);
     border: solid 4px white;
     border-radius: 15px;
 }
