@@ -9,7 +9,6 @@ import { growPopulation } from './populationGrowth';
 export const makeTurn: Function = (planet: Planet, virus: Virus): void => {
 
     planet.continents.forEach((continent: Continent) => {
-        console.log(`makeTurn foreach ${continent.population}`);
         if (continent.isInfected) {
             const chance: number = Math.random();
             if (chance > Math.random() && chance < Math.random()) {

@@ -3,9 +3,8 @@ import { Continent } from './../world/Continent';
 export const infest: Function = (continent: Continent, rate: number): void => {
 
     if (continent.isInfected === true) {
-        const infestation: number = Math.round(Math.random() * (rate + 1));
-        console.log(`infestation: ${infestation}`);
-        continent.infestedPopulation = Math.round(continent.infestedPopulation * infestation);
+        console.log(Math.round((continent.infestedPopulation * rate)) + 1);
+        continent.infestedPopulation = continent.infestedPopulation + Math.round((continent.infestedPopulation * rate + Math.random()) + 1);
         if (continent.population < continent.infestedPopulation) {
             continent.infestedPopulation = continent.population;
         }

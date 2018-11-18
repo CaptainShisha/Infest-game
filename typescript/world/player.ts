@@ -8,8 +8,11 @@ export class Player implements IPlayer {
         return this._points;
     }
 
-    public set points(inputPoints: number) {
-        this._points += inputPoints;
+    public set points(cost: number) {
+        this._points -= cost;
+    }
+    public pointsIncrement: Function = (): void => {
+        this._points += 1;
     }
 
     public get rounds(): number {

@@ -12,7 +12,7 @@ export class Virus implements IVirus {
             throw new Error ('Virus name must be inserted and more than 2 and less than 20 symbols!');
         }
         this._virusName = name;
-        this._spread = 1;
+        this._spread = 0.3;
         this._deadliness = 0;
         this._chanceOfDiscovery = 0;
         this._chanceOfMutation = 0;
