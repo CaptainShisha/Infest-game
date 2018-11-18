@@ -58,7 +58,8 @@ export class Upgrade implements IUpgrade {
             <span>${this.upgradeName}</span><br>
             <span>${this.description}</span>
             <div class="purchace">
-                <span>${this.upgradePrice}</span>
+                <p>Price</p>
+                <button>${this.upgradePrice}</buttonn>
             </div>
         </div>
     </div>`);
