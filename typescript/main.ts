@@ -2,7 +2,9 @@ import * as $ from 'jquery';
 import { createUpgrades } from './logic/createUpgrades';
 import { makeTurn } from './logic/makeTurn';
 import { initialiseGame } from './logic/startgame';
+import { upgradeVirus } from './logic/upgradeVirus';
 import { isGameWon } from './logic/winGame';
+import { IUpgrade } from './upgrades/contracts/IUpgrade';
 import { Upgrades } from './upgrades/Upgrades';
 import { Continent, Planet, Player, Virus } from './world/index';
 
@@ -17,19 +19,16 @@ const gameLoop: Function =  (virus: Virus, planet: Planet, player: Player): void
     player.roundsIncrement();
     $('#roundsPlayed').text(`Rounds played: ${player.rounds}`);
     $('#Points').text(`Points: ${player.points}`);
-    $('#infestefPeople').text(`Infested people: ${planet.infectedPeople}`)
+    $('#infestefPeople').text(`Infested people: ${planet.infectedPeople}`);
     setTimeout(() => gameLoop(virus, planet, player), 2000);
 
     $('.upgradeButton').on('click', (sender: JQueryEventObject) => {
         const currentUpgrade: IUpgrade = gameUpgrades.Upgrades
         .filter((upgrade: IUpgrade) => upgrade.upgradeName === sender.currentTarget.parentElement.parentElement.children[0].textContent)[0];
-        console.log(currentUpgrade);
         if (upgradeVirus(virus, currentUpgrade, player)) {
-            console.log('Successfully ugpraded virus');
-            upgradesCollection.removeUpgrade(currentUpgrade);
-            sender.currentTarget.parentElement.remove();
-        } else {
-            console.log('No $$');
+            gameUpgrades.removeUpgrade(currentUpgrade);
+            sender.currentTarget.parentElement.parentElement.remove();
+            alert('Successfully bought upgrade!')
         }
     });
 };
