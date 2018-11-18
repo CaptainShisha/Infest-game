@@ -1,16 +1,19 @@
 import * as $ from 'jquery';
+import { createUpgrades } from './logic/createUpgrades';
 import { makeTurn } from './logic/makeTurn';
 import { initialiseGame } from './logic/startgame';
 import { isGameWon } from './logic/winGame';
+import { Upgrades } from './upgrades/Upgrades';
 import { Continent, Planet, Player, Virus } from './world/index';
 
-const  gameLoop: Function =  (virus: Virus, planet: Planet, player: Player): void => {
+const gameUpgrades: Upgrades = createUpgrades();
+
+const gameLoop: Function =  (virus: Virus, planet: Planet, player: Player): void => {
     if (isGameWon(planet)) {
         return;
     }
     makeTurn(planet, virus);
     player.pointsIncrement();
-
     setTimeout(() => gameLoop(virus, planet, player), 2000);
 };
 
