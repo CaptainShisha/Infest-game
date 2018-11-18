@@ -16,17 +16,24 @@ const  gameLoop: Function =  (virus: Virus, planet: Planet, player: Player): voi
 
 const listener: Function = (): void => {
     $('#virusNameInput').on('click', () => {
-        $('#virusNameInput').val('');
+        if ($('#virusNameInput').val() === 'Enter virus name'){
+            $('#virusNameInput').val('');
+        }
     });
 
     $('.smallContinents').on('click', (sender: JQueryEventObject) => {
-        if (sender.currentTarget.children[0].textContent === 'Enter virus name') {
-            sender.currentTarget.children[0].textContent = '';
-        } else if ($('#virusNameInput').val() !== ' ') {
+        const text: string = $('#virusNameInput').val().toString();
+        console.log(text);
+
+        if (text === 'Enter virus name') {
+            $('#virusNameInput').val('');
+        } else if (!text && text.replace(/\s/g, '') !== '') {
             const planet: Planet = initialiseGame(sender.currentTarget.children[0].textContent);
             const virus: Virus = new Virus($('#virusNameInput').val().toString());
             const player: Player = new Player();
             gameLoop(virus, planet, player);
+        } else {
+            alert('Input a name!');
         }
     });
 
