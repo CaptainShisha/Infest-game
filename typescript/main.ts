@@ -22,7 +22,7 @@ const gameLoop: Function =  (virus: IVirus, planet: IPlanet, player: IPlayer): v
     player.roundsIncrement();
     $('#roundsPlayed').text(`Rounds played: ${player.rounds}`);
     $('#Points').text(`Points: ${player.points}`);
-    $('#infestefPeople').text(`Infested people: ${planet.infectedPeople}`);
+    $('#infestefPeople').text(`Infested people: ${Math.round(planet.infectedPeople)}`);
     setTimeout(() => gameLoop(virus, planet, player), 2000);
 
 };
@@ -55,7 +55,7 @@ const listener: Function = (): void => {
                 if (upgradeVirus(virus, currentUpgrade, player)) {
                     gameUpgrades.removeUpgrade(currentUpgrade);
                     buttonSender.currentTarget.parentElement.parentElement.parentElement.remove();
-                    alert('Successfully bought upgrade!')
+                    alert('Successfully bought upgrade!');
                 }
             });
         } else {
