@@ -6,11 +6,14 @@ import { upgradeVirus } from './logic/upgradeVirus';
 import { isGameWon } from './logic/winGame';
 import { IUpgrade } from './upgrades/contracts/IUpgrade';
 import { Upgrades } from './upgrades/Upgrades';
+import { IPlanet } from './world/contracts/IPlanet';
+import { IPlayer } from './world/contracts/IPlayer';
+import { IVirus } from './world/contracts/IVirus';
 import { Continent, Planet, Player, Virus } from './world/index';
 
 const gameUpgrades: Upgrades = createUpgrades();
 
-const gameLoop: Function =  (virus: Virus, planet: Planet, player: Player): void => {
+const gameLoop: Function =  (virus: IVirus, planet: IPlanet, player: IPlayer): void => {
     if (isGameWon(planet)) {
         return;
     }
@@ -37,9 +40,9 @@ const listener: Function = (): void => {
         if (text === 'Enter virus name') {
             $('#virusNameInput').val('');
         } else if (text.replace(/\s/g, '') !== '') {
-            const planet: Planet = initialiseGame(sender.currentTarget.children[0].textContent);
-            const virus: Virus = new Virus($('#virusNameInput').val().toString());
-            const player: Player = new Player();
+            const planet: IPlanet = initialiseGame(sender.currentTarget.children[0].textContent);
+            const virus: IVirus = new Virus($('#virusNameInput').val().toString());
+            const player: IPlayer = new Player();
             $('#startingBlock').remove();
             $('#gameContainer').css('display', 'grid');
             $('#virusName').text(`Virus name: ${virus.virusName}`);

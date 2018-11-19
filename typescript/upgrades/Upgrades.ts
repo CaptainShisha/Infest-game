@@ -2,7 +2,6 @@ import { IUpgrade } from './contracts/IUpgrade';
 
 export class Upgrades {
     private _Upgrades: IUpgrade[];
-    private _UsedUpgrades: IUpgrade[];
 
     constructor() {
         this._Upgrades = [];
@@ -28,7 +27,4 @@ export class Upgrades {
         this._Upgrades.forEach((upgrade: IUpgrade) => upgrade.createUpgradeTabInBrowser());
     }
 
-    public displayAllRemovedUpgrades(): void {
-        this._UsedUpgrades.forEach((upgrade: IUpgrade) => upgrade.createUpgradeTabInBrowser());
-    }
 }

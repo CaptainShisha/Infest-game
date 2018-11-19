@@ -47,7 +47,7 @@ describe('Virus', () => {
 
         it('give back the right spread', () => {
             // Arrange & Act & Assert
-                expect(test.spread).toBe(1);
+                expect(test.spread).toBe(0.3);
         });
 
         it('give back the right chanceOfMutation', () => {
