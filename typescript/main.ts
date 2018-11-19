@@ -24,7 +24,6 @@ const gameLoop: Function =  (virus: Virus, planet: Planet, player: Player): void
 
 };
 
-
 const listener: Function = (): void => {
     $('#virusNameInput').on('click', () => {
         if ($('#virusNameInput').val() === 'Enter virus name') {
